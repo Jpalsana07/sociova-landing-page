@@ -9,12 +9,12 @@ export default function SociovaIcon({ size = 32, className }: { size?: number; c
     >
       <defs>
         <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#3366F6" />
-          <stop offset="1" stopColor="#1B4AEB" />
+          <stop offset="0" stopColor="#7C3AED" />
+          <stop offset="1" stopColor="#3B82F6" />
         </linearGradient>
         <linearGradient id="accent" x1="20" y1="16" x2="48" y2="52" gradientUnits="userSpaceOnUse">
           <stop offset="0" stopColor="#FFFFFF" stopOpacity="1" />
-          <stop offset="1" stopColor="#BDD2FF" stopOpacity="0.9" />
+          <stop offset="1" stopColor="#E0D4FF" stopOpacity="0.9" />
         </linearGradient>
       </defs>
       <path
