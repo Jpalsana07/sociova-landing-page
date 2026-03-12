@@ -37,7 +37,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <a href="#" className="flex items-center gap-2.5 mb-3 sm:mb-4">
               <SociovaIcon size={28} className="sm:w-8 sm:h-8" />
-              <span className="text-base sm:text-lg font-bold tracking-tight">
+              <span className="text-base sm:text-lg font-bold tracking-tight" style={{ fontFamily: 'var(--font-heading), var(--font-sans)' }}>
                 Sociova
               </span>
             </a>

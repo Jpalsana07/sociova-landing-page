@@ -41,7 +41,7 @@ export default function Navbar() {
             <div className="transition-transform group-hover:scale-110">
               <SociovaIcon size={28} className="sm:w-8 sm:h-8" />
             </div>
-            <span className="text-base sm:text-lg font-bold tracking-tight">
+            <span className="text-base sm:text-lg font-bold tracking-tight" style={{ fontFamily: 'var(--font-heading), var(--font-sans)' }}>
               Sociova
             </span>
           </a>
