@@ -29,18 +29,18 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative py-24 lg:py-32 border-t border-border">
+    <section id="how-it-works" className="relative py-16 sm:py-20 lg:py-32 border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <span className="text-sm uppercase tracking-widest text-purple-400 font-medium">
+          <span className="text-xs sm:text-sm uppercase tracking-widest text-purple-400 font-medium">
             How it Works
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+          <h2 className="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
             Three steps to{" "}
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               autopilot
@@ -48,7 +48,7 @@ export default function HowItWorks() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           {steps.map((step, i) => (
             <motion.div
               key={step.number}
@@ -64,18 +64,18 @@ export default function HowItWorks() {
               )}
 
               <div className="relative inline-flex flex-col items-center">
-                <span className="text-5xl font-bold text-white/[0.04] absolute -top-4">
+                <span className="text-4xl sm:text-5xl font-bold text-white/[0.04] absolute -top-3 sm:-top-4">
                   {step.number}
                 </span>
                 <div
-                  className={`relative h-16 w-16 rounded-2xl bg-gradient-to-br ${step.gradient} flex items-center justify-center shadow-lg shadow-purple-500/10`}
+                  className={`relative h-14 w-14 sm:h-16 sm:w-16 rounded-xl sm:rounded-2xl bg-gradient-to-br ${step.gradient} flex items-center justify-center shadow-lg shadow-purple-500/10`}
                 >
-                  <step.icon className="h-7 w-7 text-white" />
+                  <step.icon className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                 </div>
               </div>
 
-              <h3 className="mt-6 text-xl font-semibold">{step.title}</h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
+              <h3 className="mt-4 sm:mt-6 text-lg sm:text-xl font-semibold">{step.title}</h3>
+              <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
                 {step.description}
               </p>
             </motion.div>

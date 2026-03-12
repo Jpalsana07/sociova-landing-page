@@ -11,13 +11,13 @@ const stats = [
 
 export default function SocialProof() {
   return (
-    <section className="relative py-20 border-y border-border">
+    <section className="relative py-12 sm:py-16 lg:py-20 border-y border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-sm uppercase tracking-widest text-muted-foreground mb-10"
+          className="text-center text-xs sm:text-sm uppercase tracking-widest text-muted-foreground mb-8 sm:mb-10"
         >
           Built for creators, marketers and founders
         </motion.p>
@@ -27,9 +27,9 @@ export default function SocialProof() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-8 sm:mb-12"
         >
-          <div className="flex -space-x-3">
+          <div className="flex -space-x-2 sm:-space-x-3">
             {[
               "from-purple-400 to-pink-400",
               "from-blue-400 to-cyan-400",
@@ -39,19 +39,19 @@ export default function SocialProof() {
             ].map((gradient, i) => (
               <div
                 key={i}
-                className={`h-10 w-10 rounded-full bg-gradient-to-br ${gradient} border-2 border-background flex items-center justify-center text-xs font-bold text-white`}
+                className={`h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-gradient-to-br ${gradient} border-2 border-background flex items-center justify-center text-[10px] sm:text-xs font-bold text-white`}
               >
                 {String.fromCharCode(65 + i)}
               </div>
             ))}
-            <div className="h-10 w-10 rounded-full bg-white/10 border-2 border-background flex items-center justify-center text-xs text-white/60">
+            <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-white/10 border-2 border-background flex items-center justify-center text-[10px] sm:text-xs text-white/60">
               +495
             </div>
           </div>
         </motion.div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -61,10 +61,10 @@ export default function SocialProof() {
               transition={{ delay: i * 0.1 }}
               className="text-center"
             >
-              <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                 {stat.value}
               </div>
-              <div className="mt-1 text-sm text-muted-foreground">
+              <div className="mt-1 text-xs sm:text-sm text-muted-foreground">
                 {stat.label}
               </div>
             </motion.div>

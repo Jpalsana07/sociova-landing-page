@@ -55,48 +55,48 @@ export default function Pricing() {
   const [yearly, setYearly] = useState(false);
 
   return (
-    <section id="pricing" className="relative py-24 lg:py-32 border-t border-border">
-      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[128px] pointer-events-none" />
+    <section id="pricing" className="relative py-16 sm:py-20 lg:py-32 border-t border-border">
+      <div className="absolute top-1/2 right-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-blue-600/5 rounded-full blur-[128px] pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <span className="text-sm uppercase tracking-widest text-purple-400 font-medium">
+          <span className="text-xs sm:text-sm uppercase tracking-widest text-purple-400 font-medium">
             Pricing
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+          <h2 className="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
             Simple,{" "}
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               transparent
             </span>{" "}
             pricing
           </h2>
-          <p className="mt-4 text-muted-foreground text-lg">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-muted-foreground">
             Start free. Upgrade when you&apos;re ready.
           </p>
 
           {/* Toggle */}
-          <div className="mt-8 flex items-center justify-center gap-3">
-            <span className={`text-sm ${!yearly ? "text-foreground" : "text-muted-foreground"}`}>
+          <div className="mt-6 sm:mt-8 flex items-center justify-center gap-2 sm:gap-3">
+            <span className={`text-xs sm:text-sm ${!yearly ? "text-foreground" : "text-muted-foreground"}`}>
               Monthly
             </span>
             <Switch checked={yearly} onCheckedChange={setYearly} />
-            <span className={`text-sm ${yearly ? "text-foreground" : "text-muted-foreground"}`}>
+            <span className={`text-xs sm:text-sm ${yearly ? "text-foreground" : "text-muted-foreground"}`}>
               Yearly
             </span>
             {yearly && (
-              <Badge className="bg-green-500/10 text-green-400 border-green-500/30">
+              <Badge className="text-[10px] sm:text-xs bg-green-500/10 text-green-400 border-green-500/30">
                 Save 20%
               </Badge>
             )}
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
@@ -104,36 +104,36 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`relative rounded-2xl border p-6 lg:p-8 ${
+              className={`relative rounded-xl sm:rounded-2xl border p-4 sm:p-6 lg:p-8 ${
                 plan.popular
-                  ? "border-purple-500/30 bg-gradient-to-b from-purple-500/[0.08] to-transparent scale-[1.02]"
+                  ? "border-purple-500/30 bg-gradient-to-b from-purple-500/[0.08] to-transparent md:scale-[1.02]"
                   : "border-white/[0.06] bg-white/[0.02]"
               }`}
             >
               {plan.popular && (
-                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-purple-600 to-blue-600 text-white border-0">
+                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] sm:text-xs bg-gradient-to-r from-purple-600 to-blue-600 text-white border-0">
                   Most Popular
                 </Badge>
               )}
 
               <div>
-                <h3 className="text-lg font-semibold">{plan.name}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">
+                <h3 className="text-base sm:text-lg font-semibold">{plan.name}</h3>
+                <p className="mt-1 text-xs sm:text-sm text-muted-foreground">
                   {plan.description}
                 </p>
               </div>
 
-              <div className="mt-6">
-                <span className="text-4xl font-bold">
+              <div className="mt-4 sm:mt-6">
+                <span className="text-3xl sm:text-4xl font-bold">
                   ${yearly ? plan.yearly : plan.monthly}
                 </span>
-                <span className="text-muted-foreground">/month</span>
+                <span className="text-sm sm:text-base text-muted-foreground">/month</span>
               </div>
 
-              <ul className="mt-6 space-y-3">
+              <ul className="mt-4 sm:mt-6 space-y-2 sm:space-y-3">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-sm">
-                    <Check className="h-4 w-4 text-purple-400 mt-0.5 shrink-0" />
+                  <li key={feature} className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm">
+                    <Check className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-purple-400 mt-0.5 shrink-0" />
                     <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
@@ -142,7 +142,7 @@ export default function Pricing() {
               <Button
                 render={<a href="#cta" />}
                 nativeButton={false}
-                className={`mt-8 w-full ${
+                className={`mt-6 sm:mt-8 w-full ${
                   plan.popular
                     ? "bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white border-0 shadow-lg shadow-purple-500/25"
                     : "bg-white/5 hover:bg-white/10 border border-white/10"

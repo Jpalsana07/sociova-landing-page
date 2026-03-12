@@ -35,19 +35,19 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-14 sm:h-16 items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 group">
+          <a href="#" className="flex items-center gap-2 sm:gap-2.5 group">
             <div className="transition-transform group-hover:scale-110">
-              <SociovaIcon size={32} />
+              <SociovaIcon size={28} className="sm:w-8 sm:h-8" />
             </div>
-            <span className="text-lg font-bold tracking-tight">
+            <span className="text-base sm:text-lg font-bold tracking-tight">
               Sociova
             </span>
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -64,7 +64,7 @@ export default function Navbar() {
             <Button
               render={<a href="#cta" />}
               nativeButton={false}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white border-0 shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white border-0 shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all text-sm"
             >
               Get Early Access
             </Button>
@@ -72,10 +72,11 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-foreground p-1"
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
           >
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
           </button>
         </div>
       </nav>
@@ -89,24 +90,26 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border"
           >
-            <div className="px-4 py-4 space-y-3">
+            <div className="px-4 py-3 sm:py-4 space-y-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
+                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-2.5 px-2 rounded-lg hover:bg-white/5"
                 >
                   {link.label}
                 </a>
               ))}
-              <Button
-                render={<a href="#cta" onClick={() => setMobileOpen(false)} />}
-                nativeButton={false}
-                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white border-0"
-              >
-                Get Early Access
-              </Button>
+              <div className="pt-2">
+                <Button
+                  render={<a href="#cta" onClick={() => setMobileOpen(false)} />}
+                  nativeButton={false}
+                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white border-0 text-sm"
+                >
+                  Get Early Access
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}
